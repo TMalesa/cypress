@@ -1,0 +1,48 @@
+<ng-container *ngIf="spinnerIsActive">
+  <ng-container *ngTemplateOutlet="spinnerContainer"></ng-container>
+</ng-container>
+
+<ng-container *ngIf="!spinnerIsActive">
+  <ng-container *ngTemplateOutlet="userLoginFormContainer"></ng-container>
+</ng-container>
+
+<ng-template #spinnerContainer>
+  <mat-spinner></mat-spinner>
+</ng-template>
+
+<ng-template #userLoginFormContainer>
+<form [formGroup]="userLogin" (ngSubmit)="login()" class="auth-form">
+  <mat-card  class="mat-elevation-z4">
+    <mat-card-title class="card-content-title">Sign-in</mat-card-title>
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="email"  placeholder="Ex. pat@example.com" />
+      <mat-error *ngIf="userLogin.get('email')?.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="userLogin.get('email')?.hasError('email')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password"  [type]="hide ? 'password' : 'text'" />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      ></button>
+    </mat-form-field>
+
+    <div class="auth-button">
+      <button mat-raised-button color="primary" [disabled]="!userLogin.valid">Login</button>
+    </div>
+    <div class="auth-prompt-container" (click)="switchAuthScreen()">
+      register
+    </div>
+  </mat-card>
+</form>
+</ng-template>

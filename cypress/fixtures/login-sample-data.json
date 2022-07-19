@@ -1,0 +1,14 @@
+{
+  "correctUserAuthenticationInformation": {
+    "email": "tumi@gmail.com",
+    "password": 123456
+  },
+  "incorrectUserAuthenticationInformation": {
+    "email": "tumi@gmail.com",
+    "password": 1234
+  },
+  "unknownUserAuthenticationInformation": {
+    "email": "tumisang@gmail.com",
+    "password": 123456
+  }
+}

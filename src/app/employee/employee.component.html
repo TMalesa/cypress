@@ -1,0 +1,30 @@
+<div class="main-page-title">Absa Employees</div>
+<mat-grid-list cols="4" rowHeight="2:2">
+  <ng-container *ngFor="let employee of employees">
+    <mat-grid-tile >
+      <mat-card >
+        <mat-card-title>Employee Number:{{ employee._id }}</mat-card-title>
+        <mat-label>Name: {{employee.fullName}}</mat-label>
+        <br>
+        <mat-label>Surname: {{employee.surname}}</mat-label>
+        <br>
+        <mat-label>Email: {{employee.email}}</mat-label>
+        <br>
+        <mat-label>AB Number: {{employee.abNumber}}</mat-label>
+        <br>
+        <mat-label>Gender: {{employee.gender}}</mat-label>
+        <br>
+        <mat-label>Department: {{employee.Departments}}</mat-label>
+        <mat-card-actions>
+          <button mat-icon-button>
+            <mat-icon
+              matTooltip="delete"
+              (click)="confirmEmployeeDeletion(employee)"
+              >delete</mat-icon
+            >
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </ng-container>
+</mat-grid-list>

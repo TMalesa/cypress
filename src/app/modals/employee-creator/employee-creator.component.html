@@ -1,0 +1,49 @@
+<div mat-dialog-title>Create Employee</div>
+<form
+  [formGroup]="employeeForm"
+  (ngSubmit)="createEmployee()"
+  class="normal-form"
+>
+  <mat-grid-list cols="0" rowHeight="400px" >
+    <mat-grid-tile>
+      <div class="controles-container">
+        <mat-form-field>
+          <input matInput formControlName="fullName" placeholder="Full Name" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput formControlName="surname" placeholder="Surname" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput formControlName="email" placeholder="Email" />
+        </mat-form-field>
+
+        <mat-radio-group formControlName="gender">
+            <mat-radio-button value="1">Male</mat-radio-button>
+            <mat-radio-button value="2">Female</mat-radio-button>
+            <mat-radio-button value="3">Other</mat-radio-button>
+          </mat-radio-group>
+
+          <mat-form-field>
+            <input matInput formControlName="abNumber" placeholder="AB Number" />
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-select formControlName="departments" placeholder="Department">
+              <mat-option>None</mat-option>
+              <ng-container *ngFor="let department of departments">
+                <mat-option value="{{ department.id }}">{{
+                  department.value
+                }}</mat-option>
+              </ng-container>
+            </mat-select>
+          </mat-form-field>
+      </div>
+    </mat-grid-tile>
+       
+  </mat-grid-list>
+  <div class="example-button-row">
+    <button mat-raised-button color="primary" [disabled]="!employeeForm.valid">Add Employee</button>
+  </div>
+</form>

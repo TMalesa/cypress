@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;background-color: whitesmoke; }
+.card-content-title
+{
+    text-align: center
+}
+
+.auth-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    margin-top: 70px;
+  }
+  
+  .form-field {
+    width: 100%;
+  }
+
+.auth-button {
+  display: table-cell;
+  width: 490px;
+}
+.auth-button .mat-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  .auth-prompt-container{
+    margin: 10px;
+  }
+ 
+.auth-prompt-container:hover{
+    cursor: pointer;
+    color: blue
+}
+ 
+.snack-bar-error-container
+{
+  background: red;
+  color: snow
+}
+   
+.snack-bar-success-container
+{
+  background: teal;
+  color: snow
+}
+   
+  
+  
+    

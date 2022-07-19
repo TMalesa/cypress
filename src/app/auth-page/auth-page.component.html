@@ -1,0 +1,17 @@
+<mat-grid-list cols="4" rowHeight="3:4">
+    <mat-grid-tile></mat-grid-tile>
+    <mat-grid-tile [colspan]="2">
+      <ng-container *ngIf="signInFormDisplayIsActive">
+        <app-login-page
+          (changeAuthScreen)="changeDisplayAuthView()"
+        ></app-login-page>
+      </ng-container>
+      <ng-container *ngIf="!signInFormDisplayIsActive">
+        <app-register>
+            (changeAuthScreen)="changeDisplayAuthView()"
+        </app-register>
+      </ng-container>
+    </mat-grid-tile>
+    <mat-grid-tile></mat-grid-tile>
+  </mat-grid-list>
+  

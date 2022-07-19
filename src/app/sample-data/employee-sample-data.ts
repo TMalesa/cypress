@@ -1,0 +1,38 @@
+export const Employee = [
+  {
+    _id: 1,
+    fullName: 'Tshego',
+    surname: 'Malesa',
+    email: 'bless@gmail.com',
+    abNumber: 'AB018b7',
+    gender: 'Female',
+    Departments: 'IT',
+  },
+  {
+    _id: 2,
+    fullName: 'Tirelo',
+    surname: 'Malesa',
+    email: 'tiro@gmail.com',
+    abNumber: 'AB018b9',
+    gender: 'Female',
+    Departments: 'Finance',
+  },
+  {
+    _id: 3,
+    fullName: 'Thato',
+    surname: 'Malesa',
+    email: 'thato@gmail.com',
+    abNumber: 'AB018b6',
+    gender: 'Female',
+    Departments: 'Cleaning',
+  },
+  {
+    _id: 4,
+    fullName: 'Thato',
+    surname: 'Malesa',
+    email: 'thato@gmail.com',
+    abNumber: 'AB018b6',
+    gender: 'Female',
+    Departments: 'Cleaning',
+  },
+];

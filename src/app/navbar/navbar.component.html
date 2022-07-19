@@ -1,0 +1,55 @@
+<mat-toolbar class="mat-elevation-z8">
+  <span><mat-icon>eco</mat-icon> My App</span>
+
+  <div class="spacer"></div>
+  <a
+    mat-button
+    *ngIf="authenticationService.getSignedInUser()"
+    matTooltip="create"
+    (click)="openContentCreationModal()"
+    >Add Employee</a
+  >
+  <a mat-button routerLink="project">View Employee</a>
+  <a
+    mat-raised-button
+    color="raised"
+    *ngIf="authenticationService.getSignedInUser()"
+    (click)="authenticationService.signOut()"
+    >Sign out</a
+  >
+</mat-toolbar>
+
+<!-- <mat-toolbar class="mat-elevation-z8">
+    <span><mat-icon>eco</mat-icon> My App</span> 
+    <div>
+      <button mat-icon-button>
+        <mat-icon
+          *ngIf="authenticationService.getSignedInUser()"
+          (click)="authenticationService.signOut()"
+          matTooltip="sign out"
+          >exit_to_app</mat-icon
+        >
+      </button>
+    </div>
+    <div>
+      <button mat-icon-button>
+        <mat-icon
+          *ngIf="authenticationService.getSignedInUser()"
+          matTooltip="create"
+          (click)="openContentCreationModal()"
+          >launch</mat-icon
+        >
+      </button>
+      <a mat-button routerLink="project">View Employee</a>
+      <button mat-icon-button>
+        <mat-icon
+          [routerLink]="['/employee-display']"
+          matTooltip="view super powers"
+          >whatshot</mat-icon
+        >
+      </button>
+    </div>
+  </mat-toolbar>
+  
+
+ -->
