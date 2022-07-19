@@ -3,10 +3,10 @@
 //   cy.get(`[matTooltip='view employees]`).click();
 // });
 
-Cypress.Commands.add("gotoSignInView", () => {
+Cypress.Commands.add("goToSignInView", () => {
   cy.get(".auth-prompt-container").contains("sign-in").click();
 });
 
-Cypress.Commands.add("gotoRegistrationView", () => {
+Cypress.Commands.add("goToRegistrationView", () => {
   cy.get(".auth-prompt-container").contains("register").click();
 });
